@@ -25,7 +25,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Практика/Booking/try6",
+    "last_opened_file_path": "D:/Практика/Booking",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,6 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689754064440</updated>
       <workItem from="1689754065439" duration="1706000" />
+      <workItem from="1689764814583" duration="313000" />
     </task>
     <servers />
   </component>
