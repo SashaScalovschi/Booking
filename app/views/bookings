@@ -1,0 +1,9 @@
+<!-- app/views/bookings/new.html.erb -->
+<h1>New Booking</h1>
+
+<%= form_with(model: @booking, url: bookings_path) do |form| %>
+  <%= form.collection_select(:room_id, Room.all, :id, :name) %>
+  <%= form.date_field :check_in_date %>
+  <%= form.date_field :check_out_date %>
+  <%= form.submit "Book" %>
+<% end %>
