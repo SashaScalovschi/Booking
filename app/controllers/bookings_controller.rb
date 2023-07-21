@@ -1,4 +1,3 @@
-# app/controllers/bookings_controller.rb
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new

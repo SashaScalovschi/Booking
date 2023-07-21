@@ -1,4 +1,4 @@
-class RoomsController < ApplicationController
+class Admin::RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,7 +6,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room_photos = @room.room_photos
   end
 
   def new
@@ -16,7 +15,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to @room, notice: 'Room was successfully created.'
+      redirect_to admin_room_path(@room), notice: 'Room was successfully created.'
     else
       render :new
     end
@@ -27,7 +26,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      redirect_to @room, notice: 'Room was successfully updated.'
+      redirect_to admin_room_path(@room), notice: 'Room was successfully updated.'
     else
       render :edit
     end
@@ -35,7 +34,7 @@ class RoomsController < ApplicationController
 
   def destroy
     @room.destroy
-    redirect_to rooms_url, notice: 'Room was successfully destroyed.'
+    redirect_to admin_rooms_path, notice: 'Room was successfully destroyed.'
   end
 
   private

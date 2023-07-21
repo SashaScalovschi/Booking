@@ -1,4 +1,3 @@
-# app/controllers/clients_controller.rb
 class ClientsController < ApplicationController
   def index
     @clients = Client.all

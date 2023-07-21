@@ -1,4 +1,3 @@
-# app/controllers/room_photos_controller.rb
 class RoomPhotosController < ApplicationController
   def destroy
     @room_photo = RoomPhoto.find(params[:id])
