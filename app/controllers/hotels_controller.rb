@@ -1,3 +1,4 @@
+# app/controllers/hotels_controller.rb
 class HotelsController < ApplicationController
   def index
     @hotels = Hotel.all
