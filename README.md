@@ -5,7 +5,7 @@ Project manager- https://github.com/users/SashaScalovschi/projects/2
 
 Figma layout-https://www.figma.com/file/LaJAYkIsdLvmHLmuTGi8XR/Untitled?type=design&node-id=0%3A1&mode=design&t=yGyCmy5btB2miBRX-1
 
-DataBase layout - https://erd.dbdesigner.net/designer/schema/1689764230-book
+DataBase layout - https://dbdesigner.page.link/m4wqNUQotjvNSD4EA
 
 =======
 >>>>>>> b820be3053f5bfaacd87ab7229dc7963dd8c01f4

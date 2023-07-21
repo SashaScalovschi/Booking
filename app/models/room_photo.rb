@@ -1,5 +1,4 @@
 class RoomPhoto < ApplicationRecord
   belongs_to :room
-
-  validates :photo, presence: true
+  mount_uploader :image, RoomPhotoImageUploader
 end
