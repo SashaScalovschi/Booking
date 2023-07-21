@@ -1,0 +1,18 @@
+<%= form_with(model: room, url: room.persisted? ? admin_room_path(room) : admin_rooms_path, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :area %>
+  <%= form.number_field :area %>
+
+  <%= form.label :balcony %>
+  <%= form.check_box :balcony %>
+
+  <%= form.label :tv %>
+  <%= form.check_box :tv %>
+
+  <%= form.label :air_conditioner %>
+  <%= form.check_box :air_conditioner %>
+
+  <%= form.submit 'Save' %>
+<% end %>

@@ -1,0 +1,7 @@
+<!-- app/views/rooms/add_photo.html.erb -->
+<h1>Add Photo to <%= @room.name %> Room</h1>
+
+<%= form_with(model: @room_photo, url: create_photo_room_path(@room), multipart: true) do |form| %>
+  <%= form.file_field :photo %>
+  <%= form.submit 'Upload' %>
+<% end %>

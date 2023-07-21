@@ -1,0 +1,13 @@
+<h1>Admin Panel - Rooms</h1>
+
+<%= link_to 'New Room', new_admin_room_path %>
+
+<ul>
+  <% @rooms.each do |room| %>
+    <li>
+      <%= link_to room.name, admin_room_path(room) %>
+      <%= link_to 'Edit', edit_admin_room_path(room) %>
+      <%= link_to 'Delete', admin_room_path(room), method: :delete, data: { confirm: 'Are you sure you want to delete this room?' } %>
+    </li>
+  <% end %>
+</ul>
