@@ -1,5 +1,26 @@
-<h1>Edit Room</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Booking Oasis</title>
+  <%= stylesheet_link_tag 'stile/styles', media: 'all' %>
+</head>
+<body>
 
-<%= render 'form', room: @room %>
+<header>
+  The Booking Oasis
+</header>
 
-<%= link_to 'Back', admin_rooms_path %>
+<main>
+  <h1>Edit Room</h1>
+
+  <%= render 'form', room: @room %>
+
+  <%= link_to 'Back', admin_rooms_path %>
+</main>
+
+<footer>
+  Created by "Team 5"
+</footer>
+
+</body>
+</html>

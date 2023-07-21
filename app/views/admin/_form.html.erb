@@ -1,18 +1,51 @@
-<%= form_with(model: room, url: room.persisted? ? admin_room_path(room) : admin_rooms_path, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Booking Oasis</title>
+  <%= stylesheet_link_tag 'stile/styles', media: 'all' %>
+</head>
+<body>
 
-  <%= form.label :area %>
-  <%= form.number_field :area %>
+<header>
+  The Booking Oasis
+</header>
 
-  <%= form.label :balcony %>
-  <%= form.check_box :balcony %>
+<main>
+  <%= form_with(model: room, url: room.persisted? ? admin_room_path(room) : admin_rooms_path, local: true, class: 'form-container') do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-  <%= form.label :tv %>
-  <%= form.check_box :tv %>
+    <div>
+      <%= form.label :area %>
+      <%= form.number_field :area %>
+    </div>
 
-  <%= form.label :air_conditioner %>
-  <%= form.check_box :air_conditioner %>
+    <div>
+      <%= form.label :balcony %>
+      <%= form.check_box :balcony %>
+    </div>
 
-  <%= form.submit 'Save' %>
-<% end %>
+    <div>
+      <%= form.label :tv %>
+      <%= form.check_box :tv %>
+    </div>
+
+    <div>
+      <%= form.label :air_conditioner %>
+      <%= form.check_box :air_conditioner %>
+    </div>
+
+    <div>
+      <%= form.submit 'Save' %>
+    </div>
+  <% end %>
+</main>
+
+<footer>
+  Created by "Team 5"
+</footer>
+
+</body>
+</html>

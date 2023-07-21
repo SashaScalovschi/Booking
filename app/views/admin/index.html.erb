@@ -1,13 +1,34 @@
-<h1>Admin Panel - Rooms</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Booking Oasis</title>
+  <%= stylesheet_link_tag 'stile/styles', media: 'all' %>
+</head>
+<body>
 
-<%= link_to 'New Room', new_admin_room_path %>
+<header>
+  The Booking Oasis
+</header>
 
-<ul>
-  <% @rooms.each do |room| %>
-    <li>
-      <%= link_to room.name, admin_room_path(room) %>
-      <%= link_to 'Edit', edit_admin_room_path(room) %>
-      <%= link_to 'Delete', admin_room_path(room), method: :delete, data: { confirm: 'Are you sure you want to delete this room?' } %>
-    </li>
-  <% end %>
-</ul>
+<main>
+  <h1>Admin Panel - Rooms</h1>
+
+  <%= link_to 'New Room', new_admin_room_path, class: 'button' %>
+
+  <ul class="rooms-list">
+    <% @rooms.each do |room| %>
+      <li class="room-item">
+        <%= link_to room.name, admin_room_path(room) %>
+        <%= link_to 'Edit', edit_admin_room_path(room), class: 'edit-link' %>
+        <%= link_to 'Delete', admin_room_path(room), method: :delete, data: { confirm: 'Are you sure you want to delete this room?' }, class: 'delete-link' %>
+      </li>
+    <% end %>
+  </ul>
+</main>
+
+<footer>
+  Created by "Team 5"
+</footer>
+
+</body>
+</html>
