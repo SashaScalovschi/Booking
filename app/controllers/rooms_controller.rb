@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @room_photos = @room.room_photos
   end
 
   def new
@@ -16,7 +17,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
 
     if @room.save
-      redirect_to @room.hotel, notice: 'Room was successfully created.'
+      redirect_to admin_rooms_path, notice: 'Room was successfully created.'
     else
       render :new
     end
@@ -30,7 +31,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
 
     if @room.update(room_params)
-      redirect_to @room.hotel, notice: 'Room was successfully updated.'
+      redirect_to admin_rooms_path, notice: 'Room was successfully updated.'
     else
       render :edit
     end
@@ -40,7 +41,24 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @room.destroy
 
-    redirect_to @room.hotel, notice: 'Room was successfully destroyed.'
+    redirect_to admin_rooms_path, notice: 'Room was successfully destroyed.'
+  end
+
+  def add_photo
+    @room = Room.find(params[:id])
+    @room_photo = RoomPhoto.new
+  end
+
+  def create_photo
+    @room = Room.find(params[:id])
+    @room_photo = RoomPhoto.new(room_photo_params)
+    @room_photo.room = @room
+
+    if @room_photo.save
+      redirect_to room_path(@room), notice: 'Photo was successfully uploaded.'
+    else
+      render :add_photo
+    end
   end
 
   private
@@ -49,5 +67,7 @@ class RoomsController < ApplicationController
     params.require(:room).permit(:hotel_id, :area, :balcony, :tv, :air_conditioner)
   end
 
-
+  def room_photo_params
+    params.require(:room_photo).permit(:photo)
+  end
 end
