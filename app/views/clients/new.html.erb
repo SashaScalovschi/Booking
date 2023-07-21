@@ -1,13 +1,38 @@
-<h1>New Client</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Booking Oasis</title>
+  <%= stylesheet_link_tag 'stile/styles', media: 'all' %>
+</head>
+<body>
 
-<%= form_with(model: @client, url: clients_path, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<header>
+  The Booking Oasis
+</header>
 
-  <%= form.label :email %>
-  <%= form.email_field :email %>
+<main>
+  <h1>New Client</h1>
 
-  <%= form.submit 'Create Client' %>
-<% end %>
+  <%= form_with(model: @client, url: clients_path, local: true) do |form| %>
+    <div class="form-field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-<%= link_to 'Back', root_path %>
+    <div class="form-field">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit 'Create Client', class: 'button' %>
+    </div>
+  <% end %>
+</main>
+
+<footer>
+  Created by "Team 5"
+</footer>
+
+</body>
+</html>

@@ -1,6 +1,12 @@
-<h1>Add Photo to <%= @room.name %> Room</h1>
+<div class="add-photo-form">
+  <h1>Add Photo to <%= @room.name %> Room</h1>
 
-<%= form_with(model: @room_photo, url: create_photo_room_path(@room), multipart: true) do |form| %>
-  <%= form.file_field :photo %>
-  <%= form.submit 'Upload' %>
-<% end %>
+  <%= form_with(model: @room_photo, url: create_photo_room_path(@room), multipart: true) do |form| %>
+    <div class="photo-field">
+      <%= form.file_field :photo %>
+    </div>
+    <div class="submit-button">
+      <%= form.submit 'Upload' %>
+    </div>
+  <% end %>
+</div>
